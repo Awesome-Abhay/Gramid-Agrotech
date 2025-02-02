@@ -1,0 +1,226 @@
+[
+    {
+        "mathura": {
+            "id_1": {
+                "name": "shankar mandi",
+                "address": "mathura city",
+                "contact": "1234567890",
+                "products": ["wheat", "rice"],
+                "shop": {
+                    "shop_1": {
+                        "name": "gourav",
+                        "contact": "1234567890",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "products": {
+                            "rice": {
+                                "price": "100",
+                                "quantity": "100kg"
+                            },
+                            "wheat": {
+                                "price": "50",
+                                "quantity": "100kg"
+                            }
+                        }
+                    },
+                    "shop_2": {
+                        "name": "adesh",
+                        "contact": "1234567890",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "products": {
+                            "rice": {
+                                "price": "99",
+                                "quantity": "100kg"
+                            },
+                            "wheat": {
+                                "price": "49",
+                                "quantity": "100kg"
+                            }
+                        }
+                    }
+                }
+            },
+            "id_2": {
+                "name": "govardhan mandi",
+                "address": "govardhan",
+                "contact": "0987654321",
+                "products": ["wheat", "rice"],
+                "shop": {
+                    "shop_1": {
+                        "name": "govardhan mandi",
+                        "contact": "0987654321",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "products": {
+                            "rice": {
+                                "price": "110",
+                                "quantity": "90kg"
+                            },
+                            "wheat": {
+                                "price": "55",
+                                "quantity": "80kg"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "agra": {
+            "id_1": {
+                "name": "agra mandi",
+                "address": "agra city",
+                "contact": "1122334455",
+                "products": ["wheat", "rice"],
+                "shop": {
+                    "shop_1": {
+                        "name": "agra mandi",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "contact": "1122334455",
+                        "products": {
+                            "rice": {
+                                "price": "120",
+                                "quantity": "110kg"
+                            },
+                            "wheat": {
+                                "price": "60",
+                                "quantity": "90kg"
+                            }
+                        }
+                    }
+                }
+            },
+            "id_2": {
+                "name": "fatehpur sikri mandi",
+                "address": "fatehpur sikri",
+                "contact": "5566778899",
+                "products": ["wheat", "rice"],
+                "shop": {
+                    "shop_1": {
+                        "name": "fatehpur sikri mandi",
+                        "contact": "5566778899",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "products": {
+                            "rice": {
+                                "price": "130",
+                                "quantity": "120kg"
+                            },
+                            "wheat": {
+                                "price": "65",
+                                "quantity": "100kg"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "aligarh": {
+            "id_1": {
+                "name": "aligarh mandi",
+                "address": "aligarh city",
+                "contact": "2233445566",
+                "products": ["wheat", "rice"],
+                "shop": {
+                    "shop_1": {
+                        "name": "aligarh mandi",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "contact": "2233445566",
+                        "products": {
+                            "rice": {
+                                "price": "140",
+                                "quantity": "130kg"
+                            },
+                            "wheat": {
+                                "price": "70",
+                                "quantity": "110kg"
+                            }
+                        }
+                    }
+                }
+            },
+            "id_2": {
+                "name": "khair mandi",
+                "address": "khair",
+                "contact": "6677889900",
+                "products": ["wheat", "rice"],
+                "shop": {
+                    "shop_1": {
+                        "name": "khair mandi",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "contact": "6677889900",
+                        "products": {
+                            "rice": {
+                                "price": "150",
+                                "quantity": "140kg"
+                            },
+                            "wheat": {
+                                "price": "75",
+                                "quantity": "120kg"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "kanpur": {
+            "id_1": {
+                "name": "kanpur mandi",
+                "address": "kanpur city",
+                "contact": "3344556677",
+                "products": ["wheat", "rice"],
+                "shop": {
+                    "shop_1": {
+                        "name": "kanpur mandi",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "contact": "3344556677",
+                        "products": {
+                            "rice": {
+                                "price": "160",
+                                "quantity": "150kg"
+                            },
+                            "wheat": {
+                                "price": "80",
+                                "quantity": "130kg"
+                            }
+                        }
+                    }
+                }
+            },
+            "id_2": {
+                "name": "bithoor mandi",
+                "address": "bithoor",
+                "contact": "7788990011",
+                "products": ["wheat", "rice"],
+                "shop": {
+                    "shop_1": {
+                        "name": "bithoor mandi",
+                        "img" : "https://placehold.co/150x150",
+                        "date": "2025-01-22",
+                        "contact": "7788990011",
+                        "products": {
+                            "rice": {
+                                "price": "170",
+                                "quantity": "160kg"
+                            },
+                            "wheat": {
+                                "price": "85",
+                                "quantity": "140kg"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+]
