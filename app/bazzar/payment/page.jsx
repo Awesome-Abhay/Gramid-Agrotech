@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { useSearchParams } from "next/navigation";
 import { useAuth } from "@hook/authContext";
@@ -200,45 +200,48 @@ export default function PaymentForm() {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 h-full justify-center">
-      <div className="p-6 text-center border border-gray-300 flex justify-center items-center gap-6 flex-wrap">
-        <div className="flex flex-col items-center mt-4 gap-2">
-          <h2 className="text-xl font-bold">Complete Your Payment</h2>
-          <p className="text-gray-600 mt-2">Scan the QR code to pay</p>
-          <QRCodeSVG value={qrValue} size={200} />
-        </div>
-
-        <div className="flex flex-col items-center mt-4">
-          <div className="mt-4 text-left w-full">
-            <label className="block text-sm font-medium">Seller UPI ID:</label>
-            <input
-              type="text"
-              value={seller["upi_id"]}
-              disabled
-              className="border border-gray-300 p-2 w-full mt-1 rounded-md"
-            />
-            <label className="block text-sm font-medium mt-2">Amount:</label>
-            <input
-              type="number"
-              value={amount}
-              disabled
-              className="border border-gray-300 p-2 w-full mt-1 rounded-md"
-            />
-            <p className="mt-2"><strong>Seller:</strong> {seller["seller_name"]}</p>
-            <p><strong>Amount:</strong> {amount} INR</p>
-            <p><strong>Method:</strong> UPI</p>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="flex flex-col items-center p-6 h-full justify-center">
+        <div className="p-6 text-center border border-gray-300 flex justify-center items-center gap-6 flex-wrap">
+          <div className="flex flex-col items-center mt-4 gap-2">
+            <h2 className="text-xl font-bold">Complete Your Payment</h2>
+            <p className="text-gray-600 mt-2">Scan the QR code to pay</p>
+            <QRCodeSVG value={qrValue} size={200} />
           </div>
-          {!paymentConfirmed ? (
-            <button
-              className="mt-4 w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition"
-              onClick={handleConfirmPayment}>
-              Confirm Payment
-            </button>
-          ) : (
-            <p className="mt-4 text-green-600 font-semibold">Payment Confirmed ✅</p>
-          )}
+
+          <div className="flex flex-col items-center mt-4">
+            <div className="mt-4 text-left w-full">
+              <label className="block text-sm font-medium">Seller UPI ID:</label>
+              <input
+                type="text"
+                value={seller["upi_id"]}
+                disabled
+                className="border border-gray-300 p-2 w-full mt-1 rounded-md"
+              />
+              <label className="block text-sm font-medium mt-2">Amount:</label>
+              <input
+                type="number"
+                value={amount}
+                disabled
+                className="border border-gray-300 p-2 w-full mt-1 rounded-md"
+              />
+              <p className="mt-2"><strong>Seller:</strong> {seller["seller_name"]}</p>
+              <p><strong>Amount:</strong> {amount} INR</p>
+              <p><strong>Method:</strong> UPI</p>
+            </div>
+            {!paymentConfirmed ? (
+              <button
+                className="mt-4 w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition"
+                onClick={handleConfirmPayment}>
+                Confirm Payment
+              </button>
+            ) : (
+              <p className="mt-4 text-green-600 font-semibold">Payment Confirmed ✅</p>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </Suspense>
+
   );
 }
