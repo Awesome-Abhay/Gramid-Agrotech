@@ -89,7 +89,7 @@ export default function Page() {
             <section className="bg-white py-10">
                 <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center px-6">
                     <div className="w-full md:w-1/2 flex justify-center md:justify-start">
-                        <img src="images/bazzar/f1.jpg" alt="Farmer in field" className="w-72 h-auto rounded  border-yellow-300 shadow-yellow-600 shadow-xl" />
+                        <img src="images/Bazzar/f1.jpg" alt="Farmer in field" className="w-72 h-auto rounded  border-yellow-300 shadow-yellow-600 shadow-xl" />
                     </div>
                     <div className="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0">
                         <h2 className="text-3xl font-bold text-gray-900">Welcome to AgriMart: Your Trusted Partner in Farming Success! 🌾</h2>
