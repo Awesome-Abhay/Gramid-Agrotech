@@ -6,9 +6,8 @@ import { useAuth } from '@hook/authContext'
 import { useRouter } from 'next/navigation';
 
 export default function Page() {
-    const { user } = useAuth();
     const redirect  = useRouter();   
-
+    const { user } =  useAuth();
 
     useEffect(() => {
         const isLogged = () => {
@@ -18,7 +17,7 @@ export default function Page() {
         }
         isLogged();
 
-    });
+    }, [user]);
 
     return (
         <>
@@ -112,21 +111,21 @@ export default function Page() {
 
                     <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mt-6 px-6 items-center justify-center">
 
-                        <div className="bg-white rounded shadow-lg overflow-hidden max-w-80">
+                        <Link href='/ai/leaf' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
                             <img src="images/feature/f1.jpg" alt="Plant Disease Detection" className="w-full h-48 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-bold text-lg">Plant disease detection | Make in India</h3>
                                 <p className="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                             </div>
-                        </div>
+                        </Link>
 
-                        <div className="bg-white rounded shadow-lg overflow-hidden max-w-80">
+                        <Link href='/ai/weather' target='_blank'className="bg-white rounded shadow-lg overflow-hidden max-w-80">
                             <img src="images/feature/f2.jpg" alt="Weather Prediction AI" className="w-full h-48 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-bold text-lg">Weather prediction using AI | Make in India</h3>
                                 <p className="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
 
