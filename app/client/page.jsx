@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Footer from '@components/Footer'
 import { useAuth } from '@hook/authContext'
@@ -8,16 +8,27 @@ import { useRouter } from 'next/navigation';
 export default function Page() {
     const redirect  = useRouter();   
     const { user } =  useAuth();
-
+   const [isAuthResolved, setIsAuthResolved] = useState(false);
+  
     useEffect(() => {
-        const isLogged = () => {
-            if(!user) {
-                redirect.push('/auth/signup')
-            }
-        }
-        isLogged();
-
-    }, [user]);
+      // Simulate waiting for authentication to resolve
+      const timer = setTimeout(() => {
+        setIsAuthResolved(true);
+      }, 500); // adjust the delay as necessary
+  
+      return () => clearTimeout(timer);
+    }, []);
+  
+    useEffect(() => {
+      // Only attempt to redirect once we know authentication has been resolved
+      if (isAuthResolved && !user) {
+        redirect.push('/auth/signup');
+      }
+    }, [isAuthResolved, user, redirect]);
+  
+    if (!isAuthResolved) {
+      return <div>Loading...</div>;
+    }
 
     return (
         <>
@@ -28,6 +39,7 @@ export default function Page() {
                     <nav className="hidden md:flex space-x-6 text-lg">
                         <Link href="/bazzar" className="text-gray-700 hover:text-blue-500 transition">Market</Link>
                         <Link href="/blog" className="text-gray-700 hover:text-blue-500 transition">Social</Link>
+                        <Link href="/admin" className="text-gray-700 hover:text-blue-500 transition">Profile</Link>
                         <Link href="/legal" className="text-gray-700 hover:text-blue-500 transition">Help</Link>
                     </nav>
                 </div>

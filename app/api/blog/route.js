@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { dbFindAll } from "@lib/dbConnect";
+import { dbFindAll, dbInsert } from "@lib/dbConnect";
 
 export async function GET(req) {
     try {
@@ -18,4 +18,42 @@ export async function GET(req) {
         console.error("Error fetching blogs:", error);
         return new NextResponse(JSON.stringify({ message: "Internal Server Error" }), { status: 500 });
     }
+}
+
+export  async function POST(req) {
+        const {
+            title,
+            description,
+            category,
+            date,
+            author,
+            image,
+            content,
+        } = await req.json();
+
+        try {
+
+            const blogPost = {
+                title,
+                description,
+                category,
+                date: new Date(date), // convert date string to Date object
+                author,
+                image, // storing the image URL (or binary data if processed differently)
+                content,
+                createdAt: new Date(),
+            };
+
+            // Insert the blog post document into the collection
+            const result = await dbInsert("blogs", blogPost);
+
+            return new NextResponse(JSON.stringify({
+                message: "Blog post created successfully.",
+                id: result.insertedId,
+            }), {status: 200});
+
+        } catch (error) {
+            console.error("Error posting blogs:", error);
+            return new NextResponse(JSON.stringify({ message: "Internal Server Error" }), { status: 500 });
+        }
 }

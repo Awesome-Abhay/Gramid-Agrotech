@@ -9,7 +9,7 @@ export async function GET(req, { params }) {
     //     return NextResponse.json({ error: "Invalid product ID" }, { status: 400 });
     // }
 
-    const seller = await dbFindID("seller", id);
+    const seller = await dbFindID("users", id);
 
     if (seller.ok === 0) {
         return NextResponse.json({ error: "Product not found" }, { status: 404 });

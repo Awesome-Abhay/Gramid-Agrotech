@@ -113,7 +113,7 @@ function PaymentFormContent() {
               className="border border-gray-300 p-2 w-full mt-1 rounded-md"
             />
             <p className="mt-2">
-              <strong>Seller:</strong> {seller.seller_name}
+              <strong>Seller:</strong> {seller.name}
             </p>
             <p>
               <strong>Amount:</strong> {amount} INR
