@@ -14,7 +14,7 @@ export function Header() {
                 <div className="flex justify-between items-center relative">
                     <h1 className="text-2xl font-bold text-white">Bazzar</h1>
                     <nav className="text-sm text-gray-200 flex items-center gap-4">
-                        <Link href="/bazzar" className="hover:text-white transition duration-300">HOME</Link>
+                        <Link href="/client" className="hover:text-white transition duration-300">HOME</Link>
                         <Link href="/bazzar/profile" className="hover:text-white transition duration-300">PROFILE</Link>
                         
                         {/* Cart Link with Badge */}
