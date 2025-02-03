@@ -11,16 +11,16 @@ export const useAuth = () => {
 export const Auth = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser)); 
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem('user');
+  //   if (storedUser) {
+  //     setUser(JSON.parse(storedUser)); 
+  //   }
+  // }, []);
 
   const onAuth = (User) => {
     setUser(User);
-    localStorage.setItem('user', JSON.stringify(User));
+    // localStorage.setItem('user', JSON.stringify(User));
   }
 
   return (
