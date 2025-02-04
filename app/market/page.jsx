@@ -5,7 +5,7 @@ import DistrictSelector from './DistrictSelector';
 export default function Page() {
 
     return (
-        <div style={{
+        <div className='bg-slate-300 w-full min-h-screen' style={{
             padding: '0.5rem'
         }}>
             <div style={{

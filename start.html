@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gramid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-100">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-lg fixed w-full z-10">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 class="text-5xl font-bold text-black-600">Gramid</h1>
+
+          <!-- Hamburger Menu Button -->
+          <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">
+              ☰
+          </button>
+
+          <!-- Floating Menu -->
+          <div id="menu" class="hidden absolute top-16 right-6 bg-white shadow-lg rounded-lg w-48 p-4 space-y-4 transition-all">
+              <a href="#" class="block text-gray-700 hover:text-blue-500 transition">Features</a>
+              <a href="#" class="block text-gray-700 hover:text-blue-500 transition">About us</a>
+              <a href="#" class="block text-gray-700 hover:text-blue-500 transition">Help</a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex space-x-6 text-lg">
+              <a href="#" class="text-gray-700 hover:text-blue-500 transition">Features</a>
+              <a href="#" class="text-gray-700 hover:text-blue-500 transition">About us</a>
+              <a href="#" class="text-gray-700 hover:text-blue-500 transition">Help</a>
+          </nav>
+      </div>
+  </header>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", (event) => {
+          menu.classList.toggle("hidden");
+          event.stopPropagation();
+      });
+      document.addEventListener("click", (event) => {
+          if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+              menu.classList.add("hidden");
+          }
+      });
+  </script>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-cover bg-center" style="background-image: url('images/fld3.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center text-white px-6">
+            <h2 class="text-5xl font-bold">Welcome to the Agriculture & Farmers Hub</h2>
+            <p class="text-xl mt-4">Join us in empowering farmers and revolutionizing agriculture with cutting-edge technology.</p>
+            <p class="text-xl mt-4">Together, we can cultivate a brighter future!</p>
+            <button class="mt-6 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition">Sign Up</button>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="p-10 bg-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold">News and Articles</h2>
+          <p class="text-gray-600 mt-2">Always up to date with our latest News and Articles</p>
+          <div class="mt-4 text-right">
+            <button class="px-4 py-2 border-2 border-black text-black font-semibold rounded shadow hover:bg-gray-200 flex items-center gap-2">
+              Read <span role="img" aria-label="book">📖</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6 mt-6">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="images/b1.jpg" alt="Startup" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-lg">AgroTech startup for Farmers of India | Make in India</h3>
+              <p class="text-gray-500 text-sm">Posted by admin Jan 2025</p>
+              <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="images/b2.jpg" alt="AI Disease Prevention" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Don't let disease take your profit use AI to fight back</h3>
+              <p class="text-gray-500 text-sm">Posted by admin Jan 2025</p>
+              <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="images/b3.jpg" alt="Best Rates" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Find the best Rate in your area and district</h3>
+              <p class="text-gray-500 text-sm">Posted by admin Jan 2025</p>
+              <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+            </div>
+          </div>
+        </div>
+      </section>      
+
+      <!-- Features -->
+      <section class="bg-gray-100 py-10">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center px-6">
+          <div class="w-full md:w-1/2 flex justify-center md:justify-start">
+            <img src="images/farmer2.jpg" alt="Farmer in field" class="w-72 h-auto rounded-lg border-4 border-yellow-300">
+          </div>
+          <div class="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0">
+            <h2 class="text-3xl font-bold text-gray-900">Welcome to AgriMart: Your Trusted Partner in Farming Success! 🌾</h2>
+            <p class="text-gray-600 mt-4">
+              At AgriMart, we are committed to empowering farmers with the best tools, equipment, and resources to grow their farms and livelihoods.
+              Our online shop offers a wide range of agricultural products tailored to meet the unique needs of every farmer.
+            </p>
+            <button class="mt-4 px-5 py-2 border-2 border-black text-black font-semibold rounded shadow hover:bg-gray-200 flex items-center gap-2">
+              Join 🤝
+            </button>
+          </div>
+        </div>
+      
+        <div class="max-w-4xl mx-auto text-center mt-10">
+          <h2 class="text-2xl font-bold text-gray-900 flex justify-center items-center gap-2">AI Features 🚀</h2>
+        </div>
+      
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mt-6 px-6">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="images/f1.jpg" alt="Plant Disease Detection" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Plant disease detection | Make in India</h3>
+              <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="images/f2.jpg" alt="Weather Prediction AI" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-lg">Weather prediction using AI | Make in India</h3>
+              <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+</body>
+</html>

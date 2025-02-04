@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-2xl rounded-2xl p-8 max-w-md w-full text-center transform scale-105">
+        <!-- Profile Picture -->
+        <img src="images/farmer.jpg" alt="Profile Picture" class="w-32 h-32 mx-auto rounded-full border-4 border-gray-300 shadow-md">
+        
+        <!-- User Info -->
+        <h2 class="text-2xl font-bold mt-4 text-gray-800">Johnny Sins</h2>
+        <p class="text-gray-700">Email: johnsins@example.com</p>
+        <p class="text-gray-700">Phone: +91 8210101225</p>
+
+        <!-- Transaction History -->
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">Transaction History</h3>
+            <div class="bg-gray-100 p-4 rounded-lg max-h-40 overflow-y-auto shadow-inner">
+                <ul class="text-sm text-gray-700 space-y-2">
+                    <li class="py-2 px-4 bg-white rounded-lg shadow-sm border">Payment to ABC Store - $50</li>
+                    <li class="py-2 px-4 bg-white rounded-lg shadow-sm border">Received from XYZ - $200</li>
+                    <li class="py-2 px-4 bg-white rounded-lg shadow-sm border">Subscription Renewal - $15</li>
+                    <li class="py-2 px-4 bg-white rounded-lg shadow-sm border">Payment to TATA Store - $500</li>
+                    <li class="py-2 px-4 bg-white rounded-lg shadow-sm border">Subscription Renewal - $15</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

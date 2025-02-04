@@ -1,95 +1,152 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const Weather = () => {
-    const [city, setCity] = useState("");
-    const [days, setDays] = useState(1);
-    const [weatherData, setWeatherData] = useState(null);
-    const [cropSuggestion, setCropSuggestion] = useState("");
+const WeatherPrediction = () => {
+  const [region, setRegion] = useState('');
+  const [days, setDays] = useState('');
+  const [weatherOutput, setWeatherOutput] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
 
-    const apiKey = "6acb636fe0914d7e80e92633251801"; // Replace with your WeatherAPI key
+  async function getWeather() {
+    const daysInt = parseInt(days, 10);
 
-    const fetchWeather = async () => {
-        try {
-            const response = await fetch(
-                `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=${days}`
-            );
-            const data = await response.json();
-            setWeatherData(data);
-            suggestCrop(data.forecast.forecastday);
-        } catch (error) {
-            console.error("Error fetching weather data:", error);
+    if (!region || isNaN(daysInt) || daysInt <= 0) {
+      alert("Please enter a valid city name and number of days!");
+      return;
+    }
+
+    // Set a loading message
+    setWeatherOutput(
+      <p className="text-gray-700">Fetching weather data...</p>
+    );
+
+    let forecastElements = [
+      <p key="city" className="text-lg text-gray-700">
+        <strong>City:</strong> {region}
+      </p>
+    ];
+    let remainingDays = daysInt;
+    let startDateIndex = 0;
+
+    try {
+      while (remainingDays > 0) {
+        const fetchDays = Math.min(remainingDays, 3);
+        const response = await fetch(
+          `http://api.weatherapi.com/v1/forecast.json?key=bfbd2bd196a242278cc143734252001&q=${region}&days=${fetchDays}`
+        );
+        const data = await response.json();
+
+        if (data.error) {
+          throw new Error(data.error.message);
         }
-    };
 
-    const suggestCrop = (forecast) => {
-        let avgTemp = 0;
-        let avgRainfall = 0;
-
-        forecast.forEach((day) => {
-            avgTemp += day.day.avgtemp_c;
-            avgRainfall += day.day.totalprecip_mm;
+        // Append forecast days while skipping days already added.
+        data.forecast.forecastday.forEach((day, index) => {
+          if (index >= startDateIndex) {
+            forecastElements.push(
+              <div
+                key={day.date}
+                className="flex items-center justify-between bg-gray-100 p-2 mt-2 rounded-lg"
+              >
+                <div>
+                  <p className="text-gray-600">{day.date}</p>
+                  <p className="text-gray-700">
+                    <strong>{day.day.condition.text}</strong>
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Temp:</strong> {day.day.avgtemp_c}°C
+                  </p>
+                </div>
+                <img
+                  src={day.day.condition.icon}
+                  alt="Weather Icon"
+                  className="w-12 h-12"
+                />
+              </div>
+            );
+          }
         });
 
-        avgTemp /= forecast.length;
-        avgRainfall /= forecast.length;
+        remainingDays -= fetchDays;
+        startDateIndex += fetchDays;
+      }
 
-        if (avgTemp > 25 && avgRainfall > 50) {
-            setCropSuggestion("Rice or चावल");
-        } else if (avgTemp > 20 && avgRainfall < 20) {
-            setCropSuggestion("Wheat or गेहूं");
-        } else if (avgTemp > 15 && avgRainfall < 50) {
-            setCropSuggestion("Maize or मक्का");
-        } else {
-            setCropSuggestion("Suitable crop data not available.");
-        }
-    };
+      setWeatherOutput(forecastElements);
+      setModalVisible(true);
+    } catch (error) {
+      setWeatherOutput(
+        <p className="text-red-500">
+          Error fetching data: {error.message}
+        </p>
+      );
+      console.error(error);
+      setModalVisible(true);
+    }
+  }
 
-    return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-            <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md text-center">
-                <h1 className="text-2xl font-bold text-gray-800 mb-4">Weather & Crop Suggestion</h1>
-                <div className="space-y-3">
-                    <input
-                        type="text"
-                        placeholder="Enter city"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded"
-                    />
-                    <input
-                        type="number"
-                        min="1"
-                        placeholder="Enter days"
-                        value={days}
-                        onChange={(e) => setDays(e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded"
-                    />
-                    <button
-                        onClick={fetchWeather}
-                        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-                    >
-                        Fetch Weather
-                    </button>
-                </div>
-                {weatherData && (
-                    <div className="mt-6 text-gray-700">
-                        <h2 className="text-lg font-semibold">Weather in {weatherData.location.name}</h2>
-                        <p>{weatherData.location.region}, {weatherData.location.country}</p>
-                        <p>Current Temp: {weatherData.current.temp_c}°C</p>
-                        <p>Condition: {weatherData.current.condition.text}</p>
-                        <h3 className="mt-4 font-semibold">Forecast ({days} day{days > 1 ? 's' : ''}):</h3>
-                        <ul className="text-sm">
-                            {weatherData.forecast.forecastday.map((day) => (
-                                <li key={day.date}>{day.date}: {day.day.avgtemp_c}°C, {day.day.condition.text}</li>
-                            ))}
-                        </ul>
-                        <h3 className="mt-4 font-semibold text-green-600">Best suited crop: {cropSuggestion}</h3>
-                    </div>
-                )}
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat bg-[url('/images/weather.jpg')]">
+      <div className="bg-white bg-opacity-90 shadow-lg rounded-lg p-6 w-96 text-center">
+        <h1 className="text-3xl font-bold text-gray-700">Weather Prediction</h1>
+
+        <label htmlFor="region" className="block mt-4 text-gray-600">
+          Enter City Name:
+        </label>
+        <input
+          type="text"
+          id="region"
+          placeholder="e.g., Delhi"
+          className="w-full p-2 border rounded-md mt-1"
+          value={region}
+          onChange={(e) => setRegion(e.target.value)}
+        />
+
+        <label htmlFor="days" className="block mt-4 text-gray-600">
+          Number of Days:
+        </label>
+        <input
+          type="number"
+          id="days"
+          placeholder="e.g., 3"
+          className="w-full p-2 border rounded-md mt-1"
+          value={days}
+          onChange={(e) => setDays(e.target.value)}
+        />
+
+        <button
+          id="checkWeather"
+          className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded shadow-lg transition"
+          onClick={getWeather}
+        >
+          Check Weather
+        </button>
+      </div>
+
+      {/* Modal */}
+      {modalVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96 max-h-[80vh] relative overflow-hidden">
+            <button
+              id="closeModal"
+              className="absolute top-2 right-3 text-gray-500 text-xl"
+              onClick={() => setModalVisible(false)}
+            >
+              &times;
+            </button>
+            <h2 className="text-2xl font-bold text-gray-700">
+              Weather Forecast
+            </h2>
+            <div
+              id="weatherContainer"
+              className="mt-4 max-h-[60vh] overflow-y-auto px-2"
+            >
+              {weatherOutput}
             </div>
+          </div>
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
-export default Weather;
+export default WeatherPrediction;

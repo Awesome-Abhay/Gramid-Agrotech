@@ -234,6 +234,7 @@ export default function SignupForm() {
                 <option value="farmer">Farmer</option>
                 <option value="seller">Seller</option>
                 <option value="blogger">Blogger</option>
+                <option value="arthi">Arthi</option>
               </select>
 
               {/* Conditionally render the UPI ID field if occupation is seller */}

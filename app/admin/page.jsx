@@ -5,6 +5,7 @@ import { useAuth } from '@hook/authContext';
 import FarmerComponent from './components/FarmerComponent';
 import SellerComponent from './components/SellerComponent';
 import BloggerComponent from './components/BloggerComponent';
+import ArthiComponent from './components/ArthiComponent';
 
 export default function Page() {
   const { user, logOut } = useAuth();
@@ -55,6 +56,8 @@ export default function Page() {
       {user?.occupation === 'farmer' && <FarmerComponent />}
       {user?.occupation === 'seller' && <SellerComponent id={user._id} />}
       {user?.occupation === 'blogger' && <BloggerComponent />}
+      {user?.occupation === 'arthi' && <ArthiComponent />}
+
     </>
   );
 }

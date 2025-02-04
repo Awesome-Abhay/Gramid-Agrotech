@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link'
 import React from 'react';
+import Agriculturalists from './Agriculture'
 
 const FarmerComponent = () => {
     return (
@@ -21,7 +22,7 @@ const FarmerComponent = () => {
                             </div>
                         </Link>
 
-                        <Link href='/ai/weather' target='_blank'className="bg-white rounded shadow-lg overflow-hidden max-w-80">
+                        <Link href='/ai/weather' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
                             <img src="images/feature/f2.jpg" alt="Weather Prediction AI" className="w-full h-48 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-bold text-lg">Weather prediction using AI | Make in India</h3>
@@ -32,8 +33,8 @@ const FarmerComponent = () => {
                 </div>
 
             </section>
-                        {/* <!-- Features --> */}
-                        <section className="bg-white py-10">
+            {/* <!-- Features --> */}
+            <section className="bg-white py-10">
                 <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center px-6">
                     <div className="w-full md:w-1/2 flex justify-center md:justify-start">
                         <img src="images/Bazzar/f1.jpg" alt="Farmer in field" className="w-72 h-auto rounded  border-yellow-300 shadow-yellow-600 shadow-xl" />
@@ -50,6 +51,7 @@ const FarmerComponent = () => {
                     </div>
                 </div>
             </section>
+            <Agriculturalists />
         </div>
     );
 };
