@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function ReelUpload() {
+export default function ReelUpload({ setUploadType }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -34,7 +34,8 @@ export default function ReelUpload() {
     if (res.status === 200) {
       const result = await res.json();
       alert(`Reel uploaded successfully! Video URL: ${formData.videoUrl}`);
-      router.push("/admin");
+      // router.push("/admin");
+      setUploadType(null);
     } else {
       const error = await res.json();
       alert(`Error: ${error.error}`);

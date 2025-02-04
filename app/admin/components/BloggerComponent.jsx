@@ -27,9 +27,9 @@ export default function BloggerComponent() {
           </button>
         </div>
       ) : uploadType === "blog" ? (
-        <Blog />
+        <Blog setUploadType={setUploadType} />
       ) : (
-        <Reel />
+        <Reel setUploadType={setUploadType} />
       )}
     </main>
   );

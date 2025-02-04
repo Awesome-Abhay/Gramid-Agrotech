@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Blog() {
+export default function Blog({ setUploadType }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -34,7 +34,8 @@ export default function Blog() {
     //   const data = await res.json();
       alert("Blog post created successfully!");
       // Optionally redirect to a different page
-      router.push("/admin");
+      // router.push("/admin");
+      setUploadType(null);
     } else {
       const error = await res.json();
       alert(`Error: ${error.error}`);
