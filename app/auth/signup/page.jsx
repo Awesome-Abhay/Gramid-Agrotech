@@ -1,12 +1,18 @@
 'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@hook/authContext';
 
 export default function SignupForm() {
-  const { signUp, onAuth } = useAuth();
+  const { signUp, onAuth, user } = useAuth();
   const route = useRouter();
+
+  useEffect(() => {
+    if(user) {
+      route.push('/client')
+    }
+  });
 
   const [message, setMessage] = useState('');
   const [otp, setOtp] = useState('');
