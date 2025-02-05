@@ -47,6 +47,12 @@ const Navbar = () => {
             isMenuOpen ? "absolute top-16 right-6" : "hidden"
           } bg-white shadow-lg rounded-lg w-48 p-4 space-y-4 transition-all`}
         >
+                    <a
+            href="/client"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            Home
+          </a>
           <a
             href="/bazzar"
             className="block text-gray-700 hover:text-blue-500 transition"
@@ -60,15 +66,33 @@ const Navbar = () => {
             Blog
           </a>
           <a
+            href="/reel"
+            className="block text-gray-700 hover:text-blue-500 transition"
+          >
+            Reels
+          </a>
+          <a
             href="/admin"
             className="block text-gray-700 hover:text-blue-500 transition"
           >
             Features
+          </a>
+          <a
+            href="/profile"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            Profile
           </a>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 text-lg">
+        <a
+            href="/client"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            Home
+          </a>
           <a
             href="/bazzar"
             className="text-gray-700 hover:text-blue-500 transition"
@@ -82,10 +106,22 @@ const Navbar = () => {
             Blog
           </a>
           <a
+            href="/reel"
+            className="block text-gray-700 hover:text-blue-500 transition"
+          >
+            Reels
+          </a>
+          <a
             href="/admin"
             className="text-gray-700 hover:text-blue-500 transition"
           >
             Features
+          </a>
+          <a
+            href="/profile"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            Profile
           </a>
         </nav>
       </div>

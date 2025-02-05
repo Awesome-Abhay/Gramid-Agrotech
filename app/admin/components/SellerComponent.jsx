@@ -82,20 +82,27 @@ export default function NewProduct({ id }) {
           <label htmlFor="category" className="block text-lg font-medium">
             Category
           </label>
-          <input
-            type="text"
+          <select
             id="category"
             name="category"
             value={formData.category}
             onChange={handleChange}
             className="mt-1 block w-full border border-gray-300 p-2 rounded"
-            placeholder="Dairy"
             required
-          />
+          >
+            <option value="">Select a category</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Grains">Grains</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Oils">Oils</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Fertilizers">Fertilizers</option>
+          </select>
         </div>
+
         <div>
           <label htmlFor="price" className="block text-lg font-medium">
-            Price ($)
+            Price (₹)
           </label>
           <input
             type="number"
@@ -140,7 +147,7 @@ export default function NewProduct({ id }) {
         </div>
         <div>
           <label htmlFor="stock" className="block text-lg font-medium">
-            Stock
+            Stock (kg in weight or number of products)
           </label>
           <input
             type="number"
@@ -150,37 +157,6 @@ export default function NewProduct({ id }) {
             onChange={handleChange}
             className="mt-1 block w-full border border-gray-300 p-2 rounded"
             placeholder="30"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="rating" className="block text-lg font-medium">
-            Rating
-          </label>
-          <input
-            type="number"
-            step="0.1"
-            id="rating"
-            name="rating"
-            value={formData.rating}
-            onChange={handleChange}
-            className="mt-1 block w-full border border-gray-300 p-2 rounded"
-            placeholder="4.5"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="reviews" className="block text-lg font-medium">
-            Reviews
-          </label>
-          <input
-            type="number"
-            id="reviews"
-            name="reviews"
-            value={formData.reviews}
-            onChange={handleChange}
-            className="mt-1 block w-full border border-gray-300 p-2 rounded"
-            placeholder="85"
             required
           />
         </div>

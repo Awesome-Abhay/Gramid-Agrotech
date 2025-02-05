@@ -9,7 +9,7 @@ export default function ProductFormPage() {
     mandi: "",
     productName: "",
     price: "",
-    quantity: "",
+    quantity: "50",
     negotiable: "No",
   });
   const [productImage, setProductImage] = useState(null);
@@ -128,7 +128,7 @@ export default function ProductFormPage() {
             value={formData.quantity}
             onChange={handleChange}
             className="w-full p-2 border rounded"
-            required
+            disabled
           />
           <select
             name="negotiable"

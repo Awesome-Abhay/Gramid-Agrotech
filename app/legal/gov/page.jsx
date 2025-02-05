@@ -53,13 +53,13 @@ export default function Page() {
 
             <main className="container mx-auto px-4 py-8">
                 {/* Search Bar */}
-                <div className="mb-8">
+                {/* <div className="mb-8">
                     <input
                         type="text"
                         placeholder="Search..."
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
                     />
-                </div>
+                </div> */}
 
                 {/* Categories */}
                 <div className="mb-8">
@@ -83,7 +83,7 @@ export default function Page() {
 
                 {/* Blogs Section */}
                 {loading ? 
-                (<p className="text-center text-gray-600">Loading blogs...</p>) 
+                (<p className="text-center text-gray-600">Loading News...</p>) 
                 : 
                 (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -101,7 +101,7 @@ export default function Page() {
                                 </div>
                             ))
                         ) : (
-                            <p className="text-center text-gray-600 col-span-4">No blogs found for "{category}"</p>
+                            <p className="text-center text-gray-600 col-span-4">No News found for "{category}"</p>
                         )
                         }
                     </div>

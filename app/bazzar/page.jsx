@@ -66,7 +66,7 @@ export default function Page() {
                                 />
                                 <div className="p-4">
                                     <div className="text-sm text-gray-500 mb-2">
-                                        {product.category.toUpperCase()} - ${product.price}
+                                        {product.category.toUpperCase()} - ₹{product.price}
                                     </div>
                                     <h3 className="text-xl font-semibold text-gray-800 mb-4">
                                         {product.name}

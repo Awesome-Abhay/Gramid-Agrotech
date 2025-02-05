@@ -52,6 +52,16 @@ const FarmerComponent = () => {
                 </div>
             </section>
             <Agriculturalists />
+            <section className="bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto my-10">
+      <h2 className="text-3xl font-bold text-gray-800 mb-4">Unlock Your Loan Eligibility</h2>
+      <p className="text-gray-600 mb-6">
+        Introducing our new loan feature! Apply for a loan tailored to your transaction history and payment records.
+        Enjoy competitive rates and a smooth application process with your preferred bank.
+      </p>
+      <Link href="/admin/loan" className="inline-block bg-blue-500 text-white font-semibold px-6 py-3 rounded hover:bg-blue-600 transition duration-200">
+          Apply Now 🚀
+      </Link>
+    </section>
         </div>
     );
 };

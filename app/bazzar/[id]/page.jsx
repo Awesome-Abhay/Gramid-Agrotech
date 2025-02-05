@@ -52,7 +52,7 @@ const ProductPage = () => {
             {/* Product Info */}
             <div className="mt-6">
                 <h1 className="text-3xl font-bold text-gray-800">{product.name}</h1>
-                <p className="text-green-600 text-xl font-semibold mt-2">${product.price}</p>
+                <p className="text-green-600 text-xl font-semibold mt-2">₹{product.price}</p>
                 <p className="text-gray-600 mt-4">{product.description}</p>
             </div>
 

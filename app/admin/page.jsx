@@ -6,6 +6,7 @@ import FarmerComponent from './components/FarmerComponent';
 import SellerComponent from './components/SellerComponent';
 import BloggerComponent from './components/BloggerComponent';
 import ArthiComponent from './components/ArthiComponent';
+import Navbar  from '@components/Navigation'
 
 export default function Page() {
   const { user, logOut } = useAuth();
@@ -34,25 +35,7 @@ export default function Page() {
 
   return (
     <>
-      <header style={{ display: 'flex', justifyContent: 'flex-end', padding: '1rem' }}>
-        <button
-          onClick={async () => {
-            await logOut();
-            // Optionally, redirect to login or home page after logout
-            router.push('/auth/signup');
-          }}
-          style={{
-            padding: '0.5rem 1rem',
-            backgroundColor: '#f44336',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-        >
-          Logout
-        </button>
-      </header>
+      <Navbar />
       {user?.occupation === 'farmer' && <FarmerComponent />}
       {user?.occupation === 'seller' && <SellerComponent id={user._id} />}
       {user?.occupation === 'blogger' && <BloggerComponent />}
