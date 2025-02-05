@@ -14,7 +14,7 @@ const FarmerComponent = () => {
 
                     <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mt-6 px-6 items-center justify-center">
 
-                        <Link href='/ai/leaf' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
+                        <Link href='https://3f8f-45-127-225-58.ngrok-free.app/' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
                             <img src="images/feature/f1.jpg" alt="Plant Disease Detection" className="w-full h-48 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-bold text-lg">Plant disease detection | Make in India</h3>
@@ -22,7 +22,7 @@ const FarmerComponent = () => {
                             </div>
                         </Link>
 
-                        <Link href='https://3f8f-45-127-225-58.ngrok-free.app/' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
+                        <Link href='/ai/weather' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
                             <img src="images/feature/f2.jpg" alt="Weather Prediction AI" className="w-full h-48 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-bold text-lg">Weather prediction using AI | Make in India</h3>
