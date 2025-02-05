@@ -22,7 +22,7 @@ const FarmerComponent = () => {
                             </div>
                         </Link>
 
-                        <Link href='https://7c71-45-127-225-58.ngrok-free.app/' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
+                        <Link href='https://3f8f-45-127-225-58.ngrok-free.app/' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
                             <img src="images/feature/f2.jpg" alt="Weather Prediction AI" className="w-full h-48 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-bold text-lg">Weather prediction using AI | Make in India</h3>
