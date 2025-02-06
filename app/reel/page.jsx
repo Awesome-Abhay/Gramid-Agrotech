@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Navbar from '@components/Navigation'
 
 // Helper function to extract the YouTube video ID.
 // If the provided string is already just an ID, it returns it directly.
@@ -84,49 +85,52 @@ export default function ReelPage() {
   const embedUrl = `https://www.youtube.com/embed/${videoId}?controls=0&autoplay=1`;
 
   return (
-    <main className="bg-gray-100 p-4 flex flex-col min-h-screen">
-      <h1 className="text-3xl font-bold text-center mb-8">Reels</h1>
-      {/* Reel container */}
-      <div className="flex-grow flex items-center justify-center">
-        <div className="relative bg-black overflow-hidden rounded-lg shadow-md w-full max-w-md">
-          {/* 
+    <>
+      <Navbar />
+      <main className="bg-gray-100 p-4 flex flex-col min-h-screen">
+        <h1 className="text-3xl font-bold text-center mb-8">Reels</h1>
+        {/* Reel container */}
+        <div className="flex-grow flex items-center justify-center">
+          <div className="relative bg-black overflow-hidden rounded-lg shadow-md w-full max-w-md">
+            {/* 
             The aspect-w-4 and aspect-h-5 classes (from Tailwind CSS's aspect-ratio plugin) 
             ensure the container maintains the desired aspect ratio.
           */}
-          <div className="aspect-w-4 aspect-h-5">
-            <iframe
-              key={reels[currentIndex].id} // Forces remount on index change.
-              src={embedUrl}
-              title={reels[currentIndex].title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
+            <div className="aspect-w-4 aspect-h-5">
+              <iframe
+                key={reels[currentIndex].id} // Forces remount on index change.
+                src={embedUrl}
+                title={reels[currentIndex].title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+            <p className="p-2 text-center text-white bg-black bg-opacity-50 absolute bottom-0 w-full">
+              {reels[currentIndex].title}
+            </p>
           </div>
-          <p className="p-2 text-center text-white bg-black bg-opacity-50 absolute bottom-0 w-full">
-            {reels[currentIndex].title}
-          </p>
         </div>
-      </div>
-      {/* Navigation buttons */}
-      <div className="flex justify-center space-x-4 mt-8">
-        <button
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-          className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Previous
-        </button>
-        <button
-          onClick={handleNext}
-          disabled={currentIndex === reels.length - 1}
-          className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Next
-        </button>
-      </div>
-    </main>
+        {/* Navigation buttons */}
+        <div className="flex justify-center space-x-4 mt-8">
+          <button
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Previous
+          </button>
+          <button
+            onClick={handleNext}
+            disabled={currentIndex === reels.length - 1}
+            className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Next
+          </button>
+        </div>
+      </main>
+    </>
   );
 }

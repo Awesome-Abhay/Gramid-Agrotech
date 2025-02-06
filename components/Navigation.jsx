@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-white shadow-lg fixed w-full z-10">
+    <header className="bg-white shadow-lg fixed w-full z-10 mb-3">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 className="text-5xl font-bold text-black-600">Gramid</h1>
 
