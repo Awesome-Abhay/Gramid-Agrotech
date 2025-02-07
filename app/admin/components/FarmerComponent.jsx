@@ -14,7 +14,7 @@ const FarmerComponent = () => {
 
                     <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mt-6 px-6 items-center justify-center">
 
-                        <Link href='https://3f8f-45-127-225-58.ngrok-free.app/' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
+                        <Link href='https://5ea8-2409-40d2-4e-c7c2-99ef-3d48-c5b6-2af2.ngrok-free.app/' target='_blank' className="bg-white rounded shadow-lg overflow-hidden max-w-80">
                             <img src="images/feature/f1.jpg" alt="Plant Disease Detection" className="w-full h-48 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-bold text-lg">Plant disease detection | Make in India</h3>
