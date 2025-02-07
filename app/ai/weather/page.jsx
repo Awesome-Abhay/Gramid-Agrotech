@@ -32,7 +32,7 @@ const WeatherPrediction = () => {
       while (remainingDays > 0) {
         const fetchDays = Math.min(remainingDays, 3);
         const response = await fetch(
-          `http://api.weatherapi.com/v1/forecast.json?key=bfbd2bd196a242278cc143734252001&q=${region}&days=${fetchDays}`
+          `https://api.weatherapi.com/v1/forecast.json?key=bfbd2bd196a242278cc143734252001&q=${region}&days=${fetchDays}`
         );
         const data = await response.json();
 
