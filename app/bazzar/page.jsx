@@ -57,7 +57,7 @@ export default function Page() {
                                 key={product._id}
                                 className="bg-white max-w-72 rounded shadow-md hover:shadow-lg transition duration-300 cursor-pointer"
                                 href={`/bazzar/${product._id}`}
-                                target="_blank"
+                                // target="_blank"
                             >
                                 <img
                                     src={product.image}

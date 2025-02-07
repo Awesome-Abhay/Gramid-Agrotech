@@ -8,7 +8,7 @@ const agriculturalists = [
     phone: "555-1234",
     email: "john.doe@example.com",
     price: "₹100/hr",
-    image: "https://placehold.co/400x200?text=John+Doe",
+    image: "https://thumbs.dreamstime.com/z/successful-agriculturist-field-corn-41321169.jpg",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const agriculturalists = [
     phone: "555-5678",
     email: "jane.smith@example.com",
     price: "₹90/hr",
-    image: "https://placehold.co/400x200?text=Jane+Smith",
+    image: "https://thumbs.dreamstime.com/z/beautiful-professional-female-agriculturist-standing-greenhouse-holding-glass-tube-little-plant-152638049.jpg",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const agriculturalists = [
     phone: "555-9012",
     email: "robert.brown@example.com",
     price: "₹120/hr",
-    image: "https://placehold.co/400x200?text=Robert+Brown",
+    image: "https://thumbs.dreamstime.com/b/agriculturist-field-corn-64759804.jpg",
   },
 ];
 

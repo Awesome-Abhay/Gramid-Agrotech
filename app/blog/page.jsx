@@ -36,7 +36,7 @@ export default function Page() {
     }, [category]);
 
     // Categories
-    const categories = ["All", "Culture", "Creativity", "Food", "Travel", "Humor", "Music"];
+    const categories = ["All", "Culture", "Agriculture", "Organic", "Money"];
 
     return (
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 font-sans">
@@ -93,7 +93,7 @@ export default function Page() {
                         blogs?.length > 0 ? (
                             blogs.map((blog) => (
                                 <div key={blog._id} className="bg-white max-w-72  rounded shadow-md hover:shadow-lg transition duration-300 cursor-pointer" onClick={() => openDialog(blog)}>
-                                    <img src="https://placehold.co/150x150" alt="Food Blog" className="w-full h-44 object-cover  mb-4"></img>
+                                    <img src={blog.image} alt="Food Blog" className="w-full h-44 object-cover  mb-4"></img>
                                     <div className="p-4">
                                     <div className="text-sm text-gray-500 mb-2">{blog.category.toUpperCase()} - {new Date(blog.date).toDateString()}</div>
                                     <h3 className="text-xl font-semibold text-gray-800 mb-4">{blog.title}</h3>
