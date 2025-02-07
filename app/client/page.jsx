@@ -5,6 +5,8 @@ import Footer from '@components/Footer'
 import { useAuth } from '@hook/authContext'
 import { useRouter } from 'next/navigation';
 import Navbar from '@components/Navigation'
+import AllPage from '@/admin/killo'
+// import FarmerComponent from '@/admin/components/FarmerComponent'
 
 export default function Page() {
     const redirect = useRouter();
@@ -113,6 +115,7 @@ export default function Page() {
                     </div>
                 </div>
             </section>
+            <AllPage />
             <Footer />
 
         </>
