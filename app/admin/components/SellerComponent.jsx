@@ -96,7 +96,7 @@ export default function NewProduct({ id }) {
             <option value="Fruits">Seed</option>
             <option value="Fertilizers">Fertilizers</option>
             {/* <option value="Oils">Fertilizer</option> */}
-            <option value="Vegetables">Food</option>
+            <option value="Cattle Foods">Food</option>
           </select>
         </div>
 
