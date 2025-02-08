@@ -61,7 +61,7 @@ export default function Page() {
             {/* <!-- Blog --> */}
             <section className="p-10 bg-gray-100">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold">News and Articles</h2>
+                    <h2 className="text-3xl font-bold">Blogs and Articles</h2>
                     <p className="text-gray-600 mt-2">Always up to date with our latest News and Articles</p>
                     <div className="mt-4 text-right">
                         <Link href='/blog' target='_blank' className="px-4 py-2 border-2 border-black text-black font-semibold rounded shadow hover:bg-gray-200 flex items-center gap-2 w-max">

@@ -34,7 +34,7 @@ const AgriculturalistsList = () => {
   return (
     <section className="p-10 bg-gray-100">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold">Agriculturalist Experts</h2>
+        <h2 className="text-3xl font-bold">Agriculturists/Experts</h2>
         <p className="text-gray-600 mt-2">
           Get professional advice from our top agriculturalists
         </p>
