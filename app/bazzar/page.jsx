@@ -7,7 +7,7 @@ export default function Page() {
     const [loading, setLoading] = useState(false);
 
     const [category, setCategory] = useState("All");
-    const categories = ["All", "Grains", "Dairy", "Fruits", "Oils", "Vegetables"];
+    const categories = ["All", "Vehicles", "Instruments", "Seeds", "Fertilizers", "Cattle Food"];
 
     // Fetch
     useEffect(() => {

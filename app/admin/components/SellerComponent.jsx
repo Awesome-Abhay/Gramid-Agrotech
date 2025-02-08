@@ -91,9 +91,9 @@ export default function NewProduct({ id }) {
             required
           >
             <option value="">Select a category</option>
-            <option value="Dairy">Vehicle</option>
-            <option value="Grains">Instrument</option>
-            <option value="Fruits">Seed</option>
+            <option value="Vehicles">Vehicle</option>
+            <option value="Instruments">Instrument</option>
+            <option value="Seeds">Seed</option>
             <option value="Fertilizers">Fertilizers</option>
             {/* <option value="Oils">Fertilizer</option> */}
             <option value="Cattle Foods">Food</option>
