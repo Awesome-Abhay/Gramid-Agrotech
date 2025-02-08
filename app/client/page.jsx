@@ -61,7 +61,7 @@ export default function Page() {
             {/* <!-- Blog --> */}
             <section className="p-10 bg-gray-100">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold">Blogs and Articles</h2>
+                    <h2 className="text-3xl font-bold">News and Articles</h2>
                     <p className="text-gray-600 mt-2">Always up to date with our latest News and Articles</p>
                     <div className="mt-4 text-right">
                         <Link href='/blog' target='_blank' className="px-4 py-2 border-2 border-black text-black font-semibold rounded shadow hover:bg-gray-200 flex items-center gap-2 w-max">
@@ -105,12 +105,12 @@ export default function Page() {
                         <img src="images/Bazzar/f1.jpg" alt="Farmer in field" className="w-72 h-auto rounded  border-yellow-300 shadow-yellow-600 shadow-xl" />
                     </div>
                     <div className="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0">
-                        <h2 className="text-3xl font-bold text-gray-900">Welcome to Zarori Suchna: Your Trusted Source for government news 🥇</h2>
+                        <h2 className="text-3xl font-bold text-gray-900">Welcome to Zarori Suchna: Your Trusted Source for government Schemes🥇</h2>
                         <p className="text-gray-600 mt-4">
                         At Zaroori Suchna, we are dedicated to keeping citizens informed with the latest updates, policies, and announcements from the government. Our platform serves as a reliable source for crucial information, ensuring that you stay up to date with schemes, subsidies, regulations, and initiatives that impact your daily life.
                         </p>
                         <Link href='/legal/gov' target='_blank' className="mt-4 px-5 py-2 border-2 border-black text-black font-semibold rounded shadow hover:bg-gray-200 flex items-center gap-2 w-max">
-                            Read 🤝
+                            Schemes 🤝
                         </Link>
                     </div>
                 </div>
