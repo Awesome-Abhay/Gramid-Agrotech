@@ -91,12 +91,12 @@ export default function NewProduct({ id }) {
             required
           >
             <option value="">Select a category</option>
-            <option value="Dairy">Dairy</option>
-            <option value="Grains">Grains</option>
-            <option value="Fruits">Fruits</option>
-            <option value="Oils">Oils</option>
-            <option value="Vegetables">Vegetables</option>
+            <option value="Dairy">Vehicle</option>
+            <option value="Grains">Instrument</option>
+            <option value="Fruits">Seed</option>
             <option value="Fertilizers">Fertilizers</option>
+            {/* <option value="Oils">Fertilizer</option> */}
+            <option value="Vegetables">Food</option>
           </select>
         </div>
 
@@ -146,7 +146,7 @@ export default function NewProduct({ id }) {
           />
         </div>
         <div>
-          <label htmlFor="stock" className="block text-lg font-medium">
+          {/* <label htmlFor="stock" className="block text-lg font-medium">
             Stock (kg in weight or number of products)
           </label>
           <input
@@ -158,10 +158,10 @@ export default function NewProduct({ id }) {
             className="mt-1 block w-full border border-gray-300 p-2 rounded"
             placeholder="30"
             required
-          />
+          /> */}
         </div>
         <div>
-          <label htmlFor="createdAt" className="block text-lg font-medium">
+          {/* <label htmlFor="createdAt" className="block text-lg font-medium">
             Created At
           </label>
           <input
@@ -172,7 +172,7 @@ export default function NewProduct({ id }) {
             onChange={handleChange}
             className="mt-1 block w-full border border-gray-300 p-2 rounded"
             required
-          />
+          /> */}
         </div>
         {/* Hidden input for seller_id */}
         <input type="hidden" name="seller_id" value={formData.seller_id} />
